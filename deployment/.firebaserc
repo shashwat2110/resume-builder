@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "getplaced-backend"
+  },
+  "targets": {
+    "getplaced-backend": {
+      "hosting": {
+        "app": [
+          "getplaced-backend"
+        ],
+        "resume_builde": [
+          "resumebuilder-getplaced"
+        ]
+      }
+    }
+  }
+}

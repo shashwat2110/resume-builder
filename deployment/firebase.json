@@ -1,0 +1,20 @@
+{
+  "database": {
+    "rules": "database.rules.json"
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "hosting": [ {
+    "target": "app",
+    "public": "public/app"
+  }, {
+    "target": "resume_builde",
+    "public": "public/resume_builder"
+  }
+],
+  "storage": {
+    "rules": "storage.rules"
+  }
+}
