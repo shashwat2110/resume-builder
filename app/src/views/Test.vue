@@ -1,49 +1,47 @@
 <template>
     <div>
-        <div v-for="employment in employmentList" :key="employment[0]">
-            <v-btn color="error" @click="removeEmployment(employment[0])"> Delete </v-btn>
-        <Employment />
+        <div v-for="education in educationList" :key="education[0]">
+            <v-btn color="error" @click="removeEducation(education[0])"> Delete </v-btn>
+        <Education />
         </div>
          <v-text-field
-            label="Company Name"
-            hint="Facebook, Google, PizzaHut, etc."
+            label="College Name"
+            hint="IIT Kanpur, DU, Miranda House, Lund University"
             persistent-hint
             outline
-            v-model="companyName"
+            v-model="collegeName"
           ></v-text-field>
-        <v-btn color="primary" @click="addEmployment(companyName)">Add Employment</v-btn>
+        <v-btn color="primary" @click="addEducation(collegeName)">Add Education</v-btn>
     </div>
 </template>
 
 
 <script>
-import Employment from '@/components/generation_two/Employment.vue'
+import Education from '@/components/generation_two/Education.vue'
 
-var employmentMap = new Map()
+var educationMap = new Map()
 export default {
     name: 'Test',
     data: function() {
         return {
-        companyName: '',
-        employmentList: []
+        collegeName: '',
+        educationList: []
         }
     },
     components: {
-        Employment
+        Education
     },
     methods: {
-        addEmployment: function(companyName) {
+        addEducation: function(collegeName) {
             var uid = Math.random()
-            var employment = {company: companyName, uid: uid}
-            employmentMap.set(uid, employment)
-            console.log(JSON.parse(JSON.stringify([...employmentMap])))
-            this.employmentList = JSON.parse(JSON.stringify([...employmentMap]))
-
-            
+            var education = {college: collegeName, uid: uid}
+            educationMap.set(uid, education)
+            console.log(JSON.parse(JSON.stringify([...educationMap])))
+            this.educationList = JSON.parse(JSON.stringify([...educationMap]))
         },
-        removeEmployment: function(companyUID) {
-            employmentMap.delete(companyUID)
-            this.employmentList = JSON.parse(JSON.stringify([...employmentMap]))
+        removeEducation: function(collegeUID) {
+            educationMap.delete(collegeUID)
+            this.educationList = JSON.parse(JSON.stringify([...educationMap]))
         }
     }
     

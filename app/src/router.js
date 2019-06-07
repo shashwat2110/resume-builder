@@ -7,6 +7,7 @@ import Login from '@/views/Login';
 import Test from '@/views/Test';
 import Data from '@/views/Data';
 import Order from '@/views/Order';
+import Experience from '@/views/Experience';
 
 Vue.use(Router);
 
@@ -53,6 +54,11 @@ const router = new Router({
       path: '/test',
       name: 'Test',
       component: Test
+    },
+    {
+      path: '/experience',
+      name: 'Experience',
+      component: Experience
     },
   ]
 });

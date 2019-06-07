@@ -2,6 +2,8 @@
 
 ## Project setup
 ```
+cd app/
+
 npm install
 ```
 
